@@ -145,6 +145,7 @@ const Chat = () => {
 			socket.off("message", handleMessages);
 			socket.off("room", handleRoomInfo);
 		};
+	// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, [search]);
 
 	useEffect(() => {

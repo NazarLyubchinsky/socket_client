@@ -2,7 +2,7 @@ import React from "react";
 import { useState } from "react";
 import { Link } from "react-router-dom";
 
-import styles from "../styles/Main.module.css";
+import s from "../styles/Main.module.css";
 
 const FIELDS = {
   NAME: "name",
@@ -25,30 +25,30 @@ const Main = () => {
   };
 
   return (
-    <div className={styles.wrap}>
-      <div className={styles.container}>
-        <h1 className={styles.heading}>Join</h1>
+    <div className={s.wrap}>
+      <div className={s.container}>
+        <h1 className={s.heading}>Join</h1>
 
-        <form className={styles.form}>
-          <div className={styles.group}>
+        <form className={s.form}>
+          <div className={s.group}>
             <input
               type="text"
               name="name"
               value={values[NAME]}
               placeholder="Username"
-              className={styles.input}
+              className={s.input}
               onChange={handleChange}
               autoComplete="off"
               required
             />
           </div>
-          <div className={styles.group}>
+          <div className={s.group}>
             <input
               type="text"
               name="room"
               placeholder="Room"
               value={values[ROOM]}
-              className={styles.input}
+              className={s.input}
               onChange={handleChange}
               autoComplete="off"
               required
@@ -56,11 +56,11 @@ const Main = () => {
           </div>
 
           <Link
-            className={styles.group}
+            className={s.group}
             onClick={handleClick}
             to={`/chat?name=${values[NAME]}&room=${values[ROOM]}`}
           >
-            <button type="submit" className={styles.button}>
+            <button type="submit" className={s.button}>
               Sign In
             </button>
           </Link>

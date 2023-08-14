@@ -1,0 +1,16 @@
+<svg width="46" height="46" viewBox="0 0 46 46" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="2">
+<circle id="BG" cx="23" cy="23" r="22.5" fill="#18181B" stroke="url(#paint0_linear_2294_1517)"/>
+<g id="logo-fb-simple 2">
+<g id="Group">
+<path id="Vector" d="M20.8828 33.3561V24.2324H17.8125V20.6768H20.8828V18.0545C20.8828 15.0115 22.7414 13.3545 25.456 13.3545C26.7563 13.3545 27.8739 13.4513 28.1996 13.4946V16.6747L26.3169 16.6756C24.8405 16.6756 24.5546 17.3771 24.5546 18.4066V20.6768H28.0756L27.6172 24.2324H24.5546V33.3561H20.8828Z" fill="white"/>
+</g>
+</g>
+</g>
+<defs>
+<linearGradient id="paint0_linear_2294_1517" x1="0" y1="23" x2="46" y2="23" gradientUnits="userSpaceOnUse">
+<stop stop-color="#0CBAF1"/>
+<stop offset="1" stop-color="#E95CE9"/>
+</linearGradient>
+</defs>
+</svg>

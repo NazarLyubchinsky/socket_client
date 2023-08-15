@@ -26,6 +26,11 @@
 	justify-content: space-between;
 	padding: 0 20px;
 }
+.header__top {
+	display: flex;
+	align-items: center;
+	gap: 30px;
+}
 
 .title {
 	text-align: center;
@@ -81,7 +86,12 @@
 .button button {
 	min-height: 70px;
 	cursor: pointer;
+}
+.buttonSub {
 	color: #fff;
+}
+.activeButton {
+	color: blue;
 }
 
 .messages {
@@ -95,13 +105,12 @@
 	overflow-y: auto;
 }
 
-
 .scrollable::-webkit-scrollbar {
 	width: 2px;
 }
 
 .scrollable::-webkit-scrollbar-thumb {
-	background-color: #666666; 
+	background-color: #666666;
 }
 
 .scrollable::-webkit-scrollbar-track {
@@ -120,7 +129,48 @@
 
 .emojies {
 	position: absolute;
-	left: 50%;
-	transform: translateX(-50%);
-	bottom: 100%;
+	left: 22px;
+	bottom: 31px;
+}
+
+@media only screen and (max-width: 500px) {
+	.wrap {
+		width: 95%;
+	}
+}
+
+@media only screen and (max-width: 400px) {
+	.form {
+		padding: 0 10px;
+	}
+	.emoji {
+		width: 28px;
+	}
+	.left {
+		padding: 5px;
+		border-radius: 0;
+	}
+	.header {
+		padding: 0 10px;
+		flex-direction: column-reverse;
+		padding-right: 0;
+	}
+	.header__top {
+		margin: 5px 0;
+	}
+	.header__bottom {
+		display: flex;
+		justify-content: flex-end;
+		width: 100%;
+	}
+	.title {
+		position: absolute;
+		top: 0;
+		left: 22px;
+	}
+}
+@media only screen and (max-width: 360px) {
+	.emojies {
+		left: 10px;
+	}
 }

@@ -1,0 +1,56 @@
+$primaryColor: #0d49d7;
+$secondaryColor: #514c4c;
+$grayColor: rgb(176, 176, 176);
+$textColor: #fff;
+
+.messages {
+	display: flex;
+	flex-direction: column;
+	row-gap: 20px;
+
+	.message {
+		width: max-content;
+		display: flex;
+		flex-direction: column;
+		row-gap: 5px;
+		width: 100%;
+
+		.text {
+			padding: 10px;
+			border-radius: 12px;
+			font-size: 15px;
+			color: $textColor;
+			word-wrap: break-word;
+			max-width: 50%;
+		}
+
+		.user {
+			font-size: 14px;
+			color: $grayColor;
+		}
+
+		&.user {
+			align-items: flex-start;
+
+			.text {
+				background: $secondaryColor;
+			}
+
+			.user {
+				padding-left: 10px;
+			}
+		}
+
+		&.me {
+			align-items: flex-end;
+
+			.text {
+				background: $primaryColor;
+			}
+
+			.user {
+				padding-right: 10px;
+			}
+		}
+	}
+}

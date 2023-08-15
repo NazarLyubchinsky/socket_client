@@ -1,3 +1,4 @@
+
 import React from "react";
 import { useState } from "react";
 import { Link } from "react-router-dom";
@@ -8,6 +9,7 @@ import s from "../styles/Main.module.scss";
 import GITHUB from '../images/git.svg'
 import FACEBOOK from '../images/face.svg'
 import INSTAGRAM from '../images/inst.svg'
+import ThemeSwitcher from "./ThemeSwitcher";
 
 const FIELDS = {
 	NAME: "name",
@@ -18,6 +20,7 @@ const Main = () => {
 	const { NAME, ROOM } = FIELDS;
 
 	const [values, setValues] = useState({ [NAME]: "", [ROOM]: "" });
+	const [isBackgroundVisible, setIsBackgroundVisible] = useState(true);
 
 	const handleChange = ({ target: { value, name } }) => {
 		setValues({ ...values, [name]: value });
@@ -29,6 +32,10 @@ const Main = () => {
 		if (isDisabled) e.preventDefault();
 	};
 
+	const toggleBackground = () => {
+		setIsBackgroundVisible(prevVisible => !prevVisible);
+	};
+
 	return (
 		<div>
 			<header className={s.header}>
@@ -37,11 +44,15 @@ const Main = () => {
 					<Link to='/'>contact</Link>
 				</nav>
 				<div>
-					<i className={s.fa_solid}>lor</i>
+					<i className={s.fa_solid}>
+
+						<ThemeSwitcher toggleBackground={toggleBackground} />
+					</i>
 				</div>
 			</header>
-			<div className={s.background}></div>
-			<section className={s.home}>
+			{/* Displaying a Background Image */}
+			{isBackgroundVisible ? <div className={s.background}></div> : <div className={s.background2}></div>}
+			<section className={isBackgroundVisible ? s.home : s.home2}>
 				<div className={s.content}>
 					<a href="/" className={s.logo}>Chat</a>
 					<h2>Welcom</h2>
@@ -104,3 +115,4 @@ const Main = () => {
 };
 
 export default Main;
+

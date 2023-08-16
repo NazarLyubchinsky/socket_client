@@ -9,7 +9,8 @@ import s from "../styles/Main.module.scss";
 import GITHUB from '../images/git.svg'
 import FACEBOOK from '../images/face.svg'
 import INSTAGRAM from '../images/inst.svg'
-import ThemeSwitcher from "./ThemeSwitcher";
+// import ThemeSwitcher from "./ThemeSwitcher";
+import Header from "./Header";
 
 const FIELDS = {
 	NAME: "name",
@@ -20,7 +21,6 @@ const Main = () => {
 	const { NAME, ROOM } = FIELDS;
 
 	const [values, setValues] = useState({ [NAME]: "", [ROOM]: "" });
-	const [isBackgroundVisible, setIsBackgroundVisible] = useState(true);
 
 	const handleChange = ({ target: { value, name } }) => {
 		setValues({ ...values, [name]: value });
@@ -32,24 +32,14 @@ const Main = () => {
 		if (isDisabled) e.preventDefault();
 	};
 
+	const [isBackgroundVisible, setIsBackgroundVisible] = useState(true);
+
 	const toggleBackground = () => {
 		setIsBackgroundVisible(prevVisible => !prevVisible);
 	};
-
 	return (
 		<div>
-			<header className={s.header}>
-				<nav className={s.nav}>
-					<Link to='/'>home</Link>
-					<Link to='/'>contact</Link>
-				</nav>
-				<div>
-					<i className={s.fa_solid}>
-
-						<ThemeSwitcher toggleBackground={toggleBackground} />
-					</i>
-				</div>
-			</header>
+			<Header toggleBackground={toggleBackground}  />
 			{/* Displaying a Background Image */}
 			{isBackgroundVisible ? <div className={s.background}></div> : <div className={s.background2}></div>}
 			<section className={isBackgroundVisible ? s.home : s.home2}>
